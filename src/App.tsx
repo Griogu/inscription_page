@@ -1,10 +1,17 @@
 import React from 'react';
-// import './App.css';
+import './App.css';
 
-export default function Button() {
+function Button({title}: {title: string}) {
 	return (
-		<button>button</button>
+		<button>{title}</button>
 	);
 }
 
-// export default App;
+export default function App() {
+	return (
+		<>
+			<title>inscription page</title>
+			<Button title="test" />
+		</>
+	);
+}
