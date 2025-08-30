@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 interface test {
@@ -14,14 +14,14 @@ function Button({title, disabled, onClick}: test) {
 }
 
 export default function App() {
-	let disable: boolean = false;
+  const [disable, setDisable] = useState(false);
 
-	return (
-		<>
-			<title>inscription page</title>
-			<Button title="disable button" onClick={() => disable = false}/>
-			<Button title="enable button" onClick={() => disable = true}/>
-			<Button title="je suis le bouton que je pense etre" disabled={disable}/>
-		</>
-	);
+  return (
+    <>
+      <title>inscription page</title>
+      <Button title="disable button" onClick={() => setDisable(true)} />
+      <Button title="enable button" onClick={() => setDisable(false)} />
+      <Button title="je suis le bouton que je pense être" disabled={disable} />
+    </>
+  );
 }
